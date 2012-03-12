@@ -1,0 +1,3 @@
+db.foo.save( { a : 1 } )
+db.foo.find()
+help

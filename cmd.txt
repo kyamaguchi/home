@@ -1,0 +1,21 @@
+# Show/Hide hidden files in Finder
+defaults write com.apple.finder AppleShowAllFiles true
+killall Finder
+defaults write com.apple.finder AppleShowAllFiles false
+killall Finder
+
+# Symbolic link
+ln -s ~/projects/hoge ~/current
+
+# Extract file paths with awk
+git status | grep deleted | awk '{print $3}'| xargs git rm
+
+# My SQL client
+/Applications/MAMP/Library/bin/mysql -u user -p
+
+/Library/PostgreSQL/8.3/scripts/runpsql.sh; exit
+
+port search ImageMagick
+sudo port install ImageMagick
+sudo port installed
+sudo port selfupdate

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+while getopts nx OPT
+do
+  case $OPT in
+    "x" ) FLG_X="TRUE" ;;
+    "n" ) FLG_N="TRUE" ;;
+  esac
+done
+
+if [ $# != 2 ] ; then
+echo "Rename target_dir with timestamp"
+echo "Usage: $0 [-nx] target_dir"
+exit
+fi
+
+year=`date +%Y`
+month=`date +%m`
+day=`date +%d`
+hour=`date +%H`
+minute=`date +%M`
+
+if [ -d $2 ] ; then
+  targetdir=`echo $2 | sed 's|/$||g'`
+  newdir="${targetdir}$year$month$day$hour$minute"
+  echo "Renaming $2 to $newdir"
+  mv $2 $newdir
+
+  if test "$FLG_X" = "TRUE" ; then
+    move_to="x/"
+  fi
+  if [ -d "$move_to" ] ; then
+    echo "Moving $newdir to $move_to"
+    mv $newdir $move_to
+  fi
+
+fi
+
+exit
+

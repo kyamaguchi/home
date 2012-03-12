@@ -1,0 +1,49 @@
+#!/bin/sh
+
+dropbox="$HOME/Dropbox/tmp/"
+
+while getopts nhox OPT
+do
+  case $OPT in
+    "h" ) FLG_H="TRUE" ;;
+    "o" ) FLG_O="TRUE" ;;
+    "x" ) FLG_X="TRUE" ;;
+    "n" ) FLG_N="TRUE" ;;
+  esac
+done
+
+if [ $# != 2 ] ; then
+echo "Archiving target_dir and move the archived file"
+echo "Usage: $0 [-nhox] target_dir"
+exit
+fi
+
+year=`date +%Y`
+month=`date +%m`
+day=`date +%d`
+hour=`date +%H`
+minute=`date +%M`
+tarextension=".tar.gz"
+
+if [ -d $2 ] ; then
+  targetdir=`echo $2 | sed 's|/$||g'`
+  tarfile="${targetdir}_$year$month$day$hour$minute$tarextension"
+  echo "Archiving into $tarfile"
+  tar czvf $tarfile $2
+
+  if test "$FLG_H" = "TRUE" ; then
+    move_to="${dropbox}h/"
+  elif test "$FLG_O" = "TRUE" ; then
+    move_to="${dropbox}o/"
+  elif test "$FLG_X" = "TRUE" ; then
+    move_to="x/"
+  fi
+  if [ -d "$move_to" ] ; then
+    echo "Moving to $move_to"
+    mv $tarfile $move_to
+  fi
+
+fi
+
+exit
+

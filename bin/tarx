@@ -1,0 +1,38 @@
+#!/bin/sh
+
+dropbox="$HOME/Dropbox/tmp/"
+
+while getopts nx OPT
+do
+  case $OPT in
+    "x" ) FLG_X="TRUE" ;;
+    "n" ) FLG_N="TRUE" ;;
+  esac
+done
+
+if [ $# != 2 ] ; then
+echo "Moving target_file to current_dir and extract it"
+echo "Usage: $0 [-nx] target_file"
+exit
+fi
+
+if [ -f $2 ] ; then
+  echo "Moving and extracting $2"
+  mv $2 .
+  file=`echo $2 | sed 's|^.*/||g'`
+  if [ -f $file ] ; then
+    tar zxvf $file
+
+    if test "$FLG_X" = "TRUE" ; then
+      move_to="x/"
+    fi
+    if [ -d "$move_to" ] ; then
+      echo "Moving $file to $move_to"
+      mv $file $move_to
+    fi
+  fi
+
+fi
+
+exit
+

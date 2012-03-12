@@ -1,0 +1,84 @@
+[user]
+  name = Kazuho Yamaguchi
+  email = kyamaguchi@mhl-hd.com
+[color]
+  ui = auto
+[color "branch"]
+#  current = yellow reverse
+#  local = yellow
+  remote = red
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+#[color "diff"]
+#  whitespace = red reverse
+#[core]
+#  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color "status"]
+#  added = yellow
+#  changed = green
+  untracked = magenta
+[alias]
+  co = checkout
+  br = branch
+  st = status
+  ci = commit
+  ca = commit --amend
+  ri = rebase -i
+  rc = rebase --continue
+  ra = rebase --abort
+  rs = rebase --skip
+  ml = merge --no-ff --log
+  df = diff
+  dc = diff --cached
+  dw = diff -w
+  dn = diff --name-only
+  difff = diff
+  praise = blame
+  lg = log -p
+  lof = log --name-status
+  lgp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lolb = log --graph --decorate --pretty=oneline --abbrev-commit --branches
+  lolt = log --graph --decorate --pretty=oneline --abbrev-commit --tags
+  lolr = log --graph --decorate --pretty=oneline --abbrev-commit --remotes
+  ls = ls-files
+
+  # Stage deleted files only
+  rmall = !"git status | grep deleted | awk '{print $3}'| xargs git rm"
+  # Add untracked files only
+  addut=!git add $(git ls-files -o --exclude-standard)
+
+  # http://jeetworks.org/node/53
+  whatsnewlog = !"sh -c \"git log  --graph --pretty=format:'%Creset%C(red bold)[%ad] %C(blue bold)%h%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset'  --abbrev-commit --date=short $(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)@{1}..$(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)\""
+  whatsnew = !"sh -c \"git diff  $(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)@{1}..$(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)\""
+
+[apply]
+  whitespace = strip
+[diff]
+  color = auto
+  rename = copy
+[pager]
+  color = true
+[status]
+  color = auto
+[giggle]
+  compact-mode = false
+  main-window-maximized = false
+  main-window-geometry = 1734x930+20+19
+[init]
+#  templatedir = $HOME/git-hooks-templates
+#[github]
+#  user=user
+
+[core]
+	excludesfile = $HOME/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
