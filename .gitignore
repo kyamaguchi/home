@@ -43,6 +43,7 @@
 .oh-my-zsh
 .npm
 .passenger
+.pgpass
 .putty
 .rdebug_hist
 .recently-used.xbel
