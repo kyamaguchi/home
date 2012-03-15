@@ -70,12 +70,12 @@
   main-window-maximized = false
   main-window-geometry = 1734x930+20+19
 [init]
-#  templatedir = $HOME/git-hooks-templates
+#  templatedir = ~/git-hooks-templates
 #[github]
 #  user=user
 
 [core]
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
