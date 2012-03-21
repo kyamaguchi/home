@@ -92,6 +92,10 @@ alias gem137='gem update --system 1.3.7'
 alias gemlatest='gem update --system'
 alias gemformat="perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/*/specifications/*.gemspec"
 
+alias rla=request-log-analyzer
+# Usage $ cat log/production.log | rl
+alias rl='grep Started | awk {'"'"'print $3'"'"'} | sed -e '"'"'s/[0-9][0-9]*/X/g'"'"'| sort | uniq -c | sort -rn'
+
 alias iphone='open /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 # Common Rails command shortcuts
