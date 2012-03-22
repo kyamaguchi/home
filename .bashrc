@@ -96,6 +96,10 @@ alias rla=request-log-analyzer
 # Usage $ cat log/production.log | rl
 alias rl='grep Started | awk {'"'"'print $3'"'"'} | sed -e '"'"'s/[0-9][0-9]*/X/g'"'"'| sort | uniq -c | sort -rn'
 
+alias freq='mask_path.rb | sort | uniq -c | sort -n | awk '"'"'$1>1 {print}'"'"''
+alias freq2='mask_path.rb | sort | uniq -c | sort -n | awk '"'"'$1>1 {print}'"'"' | awk '"'"'$3 != "" {print}'"'"' | grep -v -P "(cd|git)"'
+alias freq3='mask_path.rb | grep "|" | sort | uniq -c | sort -n | awk '"'"'$1>1 {print}'"'"''
+
 alias iphone='open /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 # Common Rails command shortcuts
