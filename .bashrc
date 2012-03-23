@@ -83,6 +83,10 @@ alias gitst='git status'
 alias t='~/Dropbox/Script/createTabAtCurrentDirectory.applescript'
 alias grepconf='grep -e "^[^#]"'
 
+alias tl='terminitor list'
+alias ts='terminitor start'
+alias tst='terminitor start today'
+
 alias vb='vi ~/.bashrc'
 alias sb='source ~/.bashrc'
 
