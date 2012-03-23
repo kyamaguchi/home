@@ -83,6 +83,9 @@ alias gitst='git status'
 alias t='~/Dropbox/Script/createTabAtCurrentDirectory.applescript'
 alias grepconf='grep -e "^[^#]"'
 
+alias vb='vi ~/.bashrc'
+alias sb='source ~/.bashrc'
+
 alias be='bundle exec'
 alias brake='bundle exec rake'
 alias cap='bundle exec cap'
