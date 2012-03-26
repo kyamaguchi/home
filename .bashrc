@@ -89,6 +89,8 @@ alias tst='terminitor start today'
 
 alias vb='vi ~/.bashrc'
 alias sb='source ~/.bashrc'
+alias vbp='vi ~/.bash_profile'
+alias sbp='source ~/.bash_profile'
 
 alias be='bundle exec'
 alias brake='bundle exec rake'
