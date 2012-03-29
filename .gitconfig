@@ -31,6 +31,7 @@
   ra = rebase --abort
   rs = rebase --skip
   ml = merge --no-ff --log
+  cp = cherry-pick
   df = diff
   dc = diff --cached
   dw = diff -w
