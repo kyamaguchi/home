@@ -43,7 +43,8 @@
   lof = log --name-status
   lgp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --branches --remotes
+  lolat = log --graph --decorate --pretty=oneline --abbrev-commit --all
   lolb = log --graph --decorate --pretty=oneline --abbrev-commit --branches
   lolt = log --graph --decorate --pretty=oneline --abbrev-commit --tags
   lolr = log --graph --decorate --pretty=oneline --abbrev-commit --remotes
