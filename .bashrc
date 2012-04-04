@@ -75,6 +75,7 @@ alias drvmc='rvm --default use ruby-1.8.7-p330@rails3'
 alias drvms='rvm --default use system'
 alias m=mate
 
+alias g='git'
 alias gut=git
 alias got=git
 alias gti=git
