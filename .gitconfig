@@ -49,6 +49,11 @@
   lolt = log --graph --decorate --pretty=oneline --abbrev-commit --tags
   lolr = log --graph --decorate --pretty=oneline --abbrev-commit --remotes
   ls = ls-files
+  ls-ignored = ls-files -o
+  ignore-local = update-index --assume-unchanged
+  noignore-local = update-index --no-assume-unchanged
+  list-ignore-local = !git ls-files -v | grep "^h"
+  reset-ignore-local = update-index --really-refresh
 
   # Stage deleted files only
   rmall = !"git status | grep deleted | awk '{print $3}'| xargs git rm"
