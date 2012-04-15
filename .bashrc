@@ -94,9 +94,14 @@ alias ts='terminitor start'
 alias tst='terminitor start today'
 
 alias vb='vi ~/.bashrc'
+alias mb='mate ~/.bashrc'
 alias sb='source ~/.bashrc'
 alias vbp='vi ~/.bash_profile'
+alias mbp='mate ~/.bash_profile'
 alias sbp='source ~/.bash_profile'
+
+alias vg='vi ~/.gitconfig'
+alias mg='mate ~/.gitconfig'
 
 alias be='bundle exec'
 alias brake='bundle exec rake'
