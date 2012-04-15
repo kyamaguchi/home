@@ -68,6 +68,11 @@ alias historyd='history | cut -c8- | sed -e "s/^/$ /"'
 #alias tarx='tar zxvf'
 
 alias rbp='rails_best_practices'
+alias db_migrate='bundle exec rake db:migrate ; RAILS_ENV=test bundle exec rake db:migrate'
+alias db_rollback='bundle exec rake db:rollback ; RAILS_ENV=test bundle exec rake db:rollback'
+alias db_drop='bundle exec rake db:drop ; RAILS_ENV=test bundle exec rake db:drop'
+alias testdb_reset='RAILS_ENV=test bundle exec rake db:drop ; RAILS_ENV=test bundle exec rake db:migrate'
+
 alias cdc='cd ~/current'
 alias rvmc='rvm use ruby-1.8.7-p330@rails3'
 alias rvms='rvm use system'
