@@ -53,6 +53,9 @@
   ignore-local = update-index --assume-unchanged
   noignore-local = update-index --no-assume-unchanged
   list-ignore-local = !git ls-files -v | grep "^h"
+  il = !git ignore-local
+  nil = !git noignore-local
+  lil = !git list-ignore-local
   reset-ignore-local = update-index --really-refresh
 
   # Stage deleted files only
