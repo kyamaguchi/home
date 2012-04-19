@@ -4,7 +4,7 @@ export PATH
 export EDITOR=vi
 export SVN_EDITOR=vi
 export GEMEDITOR='mate -w'
-export VISUAL='/usr/local/bin/mate --wait'
+export VISUAL=vi
 
 export COPYFILE_DISABLE=true
 
