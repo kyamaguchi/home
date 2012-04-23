@@ -13,6 +13,7 @@
 .bash_history
 .bash_profile
 .bash_profile.macports*
+.bitrock
 .bundler
 .cheat
 .config
@@ -27,6 +28,7 @@
 .eclipse
 .filezilla
 .fontconfig
+.fonts
 .freemind
 .freeplane
 .gem
@@ -55,8 +57,10 @@
 .ssh
 .sshterm
 .subversion
+.terminitor
 .termtter
 .titanium
+.vegas
 .viminfo
 .wine
 .winetrickscache
@@ -74,6 +78,7 @@ bin/ri-ree*
 bin/testrb-ree*
 
 Applications
+Calibre Library
 Desktop
 Documents
 Downloads
@@ -85,9 +90,12 @@ Pictures
 Public
 Sites
 VirtualBox VMs
+Wine Files
 current
 evernote
 github
+local
+macports
 projects
 share
 source
