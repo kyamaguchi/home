@@ -23,6 +23,7 @@
 [alias]
   co = checkout
   br = branch
+  bl = branch -lf
   st = status
   ci = commit
   ca = commit --amend
