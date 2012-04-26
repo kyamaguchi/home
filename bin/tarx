@@ -1,7 +1,5 @@
 #!/bin/sh
 
-dropbox="$HOME/Dropbox/tmp/"
-
 while getopts nx OPT
 do
   case $OPT in
