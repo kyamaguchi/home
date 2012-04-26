@@ -64,6 +64,8 @@ alias ll='ls -alt'
 alias historyc='history | cut -c8-'
 alias historyd='history | cut -c8- | sed -e "s/^/$ /"' 
 
+alias utf='nkf -w --overwrite'
+
 #alias tarc='tar czvf'
 #alias tarx='tar zxvf'
 
