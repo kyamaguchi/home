@@ -2,6 +2,7 @@
 
 .CFUserTextEncoding
 .DownloadManager
+.DS_Store
 .Rapp.history
 .Trash
 .Xauthority
@@ -48,6 +49,7 @@
 .passenger
 .pgpass
 .putty
+.rbenv
 .rdebug_hist
 .recently-used.xbel
 .ri
@@ -61,6 +63,7 @@
 .termtter
 .titanium
 .vegas
+.vim
 .viminfo
 .wine
 .winetrickscache
@@ -92,13 +95,16 @@ Sites
 VirtualBox VMs
 Wine Files
 current
+data
 evernote
 github
 local
 macports
 projects
+rbenv-bundler
 share
 source
+sql
 tmp
 websites
 x
