@@ -61,6 +61,8 @@ export HISTCONTROL="ignoredups"
 alias df='df -h'
 alias ll='ls -alt'
 
+alias stop='top -o CPU -s 5'
+
 alias historyc='history | cut -c8-'
 alias historyd='history | cut -c8- | sed -e "s/^/$ /"'
 
