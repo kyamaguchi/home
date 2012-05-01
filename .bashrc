@@ -54,7 +54,7 @@ shopt -s histappend
 #export PROMPT_COMMAND="history -a; history -n"
 # increase history size
 export HISTSIZE=10000
-# Don't put duplicate lines in the history and don't save 
+# Don't put duplicate lines in the history and don't save
 export HISTCONTROL="ignoredups"
 
 # alias rm='rm -i'
@@ -62,7 +62,7 @@ alias df='df -h'
 alias ll='ls -alt'
 
 alias historyc='history | cut -c8-'
-alias historyd='history | cut -c8- | sed -e "s/^/$ /"' 
+alias historyd='history | cut -c8- | sed -e "s/^/$ /"'
 
 alias utf='nkf -w --overwrite'
 
@@ -162,9 +162,9 @@ ffs () { /usr/bin/find . -name "$@"'*' ; }
 ffe () { /usr/bin/find . -name '*'"$@" ; }
 
 # grepfind: to grep through files found by find, e.g. grepf pattern '*.c'
-# note that 'grep -r pattern dir_name' is an alternative if want all files 
+# note that 'grep -r pattern dir_name' is an alternative if want all files
 grepfind () { find . -type f -name "$2" -print0 | xargs -0 grep "$1" ; }
-# I often can't recall what I named this alias, so make it work either way: 
+# I often can't recall what I named this alias, so make it work either way:
 alias findgrep='grepfind'
 
 # find_larger: find files larger than a certain size (in bytes)
