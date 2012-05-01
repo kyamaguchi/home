@@ -78,6 +78,7 @@ bin/rake-ree*
 bin/rdoc-ree*
 bin/ree-*
 bin/ri-ree*
+bin/rvm*
 bin/testrb-ree*
 
 Applications
@@ -102,6 +103,7 @@ local
 macports
 projects
 rbenv-bundler
+ruby-build
 share
 source
 sql
