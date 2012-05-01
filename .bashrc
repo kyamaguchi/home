@@ -8,8 +8,6 @@ export VISUAL=vi
 
 export COPYFILE_DISABLE=true
 
-export RUBY_SOURCE_DIR=$HOME/source/ruby-1.8.7-p72
-
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 ## Terminal
@@ -41,11 +39,6 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo -n $GEM_HOME | se
 #        PS1="\W \u\$ "
 #        ;;
 #esac
-
-
-
-rvm use ruby-1.8.7-p330@rails3
-
 
 ## history ( http://d.hatena.ne.jp/sppr/20090109/1231518070 )
 # Make bash append rather than overwrite the history on disk
