@@ -29,7 +29,7 @@ if [ -d $2 ] ; then
   targetdir=`echo $2 | sed 's|/$||g'`
   tarfile="${targetdir}_$year$month$day$hour$minute$tarextension"
   echo "Archiving into $tarfile"
-  tar czvf $tarfile $2
+  tar czvf $tarfile --exclude ./log $2
 
   if test "$FLG_H" = "TRUE" ; then
     move_to="${dropbox}h/"
