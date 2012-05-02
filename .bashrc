@@ -85,6 +85,8 @@ alias gitst='git status'
 
 alias t='~/Dropbox/Script/createTabAtCurrentDirectory.applescript'
 alias grepconf='grep -e "^[^#]"'
+# grep -rl "string" /path (recursive & files-with-matches)
+alias greprl='grep -rl'
 
 alias tl='terminitor list'
 alias ts='terminitor start'
