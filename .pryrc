@@ -21,3 +21,4 @@ if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
   end
 end
 
+Pry.config.editor = proc { |file, line| "mate -l #{line} #{file}" }
