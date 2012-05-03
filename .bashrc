@@ -40,6 +40,13 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo -n $GEM_HOME | se
 #        ;;
 #esac
 
+# colored grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;33'
+
+# colored ls
+export LSCOLORS='Gxfxcxdxdxegedabagacad'
+
 ## history ( http://d.hatena.ne.jp/sppr/20090109/1231518070 )
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
@@ -52,12 +59,32 @@ export HISTCONTROL="ignoredups"
 
 # alias rm='rm -i'
 alias df='df -h'
-alias ll='ls -alt'
+
+alias sl=ls
+alias ls='ls -G'        # Compact view, show colors
+alias la='ls -AF'       # Compact view, show hidden
+alias ll='ls -alth'     # 'ls -al'
+alias l='ls -a'
+alias l1='ls -1'
+
+alias q="exit"
+
+alias ..='cd ..'         # Go up one directory
+alias ...='cd ../..'     # Go up two directories
+alias ....='cd ../../..' # Go up two directories
+alias -- -="cd -"        # Go back
 
 alias stop='top -o CPU -s 5'
 
+alias h='history'
 alias historyc='history | cut -c8-'
 alias historyd='history | cut -c8- | sed -e "s/^/$ /"'
+
+# Tree
+if [ ! -x "$(which tree 2>/dev/null)" ]
+then
+  alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+fi
 
 alias utf='nkf -w --overwrite'
 

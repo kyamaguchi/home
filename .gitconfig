@@ -25,6 +25,7 @@
   br = branch
   bl = branch -lf
   st = status
+  sts = status -s
   ci = commit
   ca = commit --amend
   ri = rebase -i
@@ -45,6 +46,9 @@
   praise = blame
   fp = fetch -p
   pr = pull --rebase
+  cl = clone
+  clm = clone --mirror
+  zip = archive --format=zip HEAD -o
   lg = log -p
   lof = log --name-status
   lgp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -56,6 +60,7 @@
   lolt = log --graph --decorate --pretty=oneline --abbrev-commit --tags
   lolr = log --graph --decorate --pretty=oneline --abbrev-commit --remotes
   ls = ls-files
+  conf = config --list
   ls-ignored = ls-files -o
   add-ignore = "!f() { echo $1 >> .gitignore ; }; f"
   ignore-local = update-index --assume-unchanged
