@@ -111,11 +111,11 @@ alias gem137='gem update --system 1.3.7'
 alias gemlatest='gem update --system'
 alias gemformat="perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/*/specifications/*.gemspec"
 
-alias rbenvd='ruby-build --definitions'
-alias rbenvv='rbenv versions'
-alias rbenvi='rbenv install'
-alias rbenvr='rbenv rehash'
-alias rbenvg='rbenv global'
+alias rbed='ruby-build --definitions'
+alias rbev='rbenv versions'
+alias rbei='rbenv install'
+alias rber='rbenv rehash'
+alias rbeg='rbenv global'
 
 alias rla=request-log-analyzer
 # Usage $ cat log/production.log | rl
