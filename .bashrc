@@ -109,6 +109,7 @@ alias gut=git
 alias got=git
 alias gti=git
 alias gitst='git status'
+alias gs='git status'
 
 alias t='~/Dropbox/Script/createTabAtCurrentDirectory.applescript'
 alias grepconf='grep -e "^[^#]"'
