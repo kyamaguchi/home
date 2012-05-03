@@ -11,34 +11,16 @@ export COPYFILE_DISABLE=true
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 ## Terminal
-function spchar {
-  # chars=("ॐ" "†" "※" "⁂" "℗" "⇨" "∞" "∭" "∴" "⌛" "⌨" "◎" "☀" "☁" "☂" "☃" "☄" "★" "☑" "☒" "☕" "☘" "☛" "☞" "☠" "☪" "☯" "☹" "☺" "♕" "♖" "♗" "♘" "♞" "♠" "♣" "♥" "♦" "♨" "♩" "♪" "♫" "♭" "♯" "♻" "⚀" "⚁" "⚂" "⚃" "⚄" "⚅" "⚐" "⚒" "⚓" "⚔" "⚛" "⚠" "⚡" "✂" "✆" "✈" "✌" "✍" "✏" "✓" "✖" "✗" "✞" "✡" "✪" "✯" "✹" "❀" "❄" "❖" "➔" "➜" "➠" "➢" "➥" "➲" "➾" "")
-  chars=("¡" "¿" "ॐ" "†" "※" "⁂" "⁋" "℗" "⇨" "∞" "∭" "∴" "⌛" "⌨" "⍟" "⎋" "◎" "☀" "☁" "☂" "☃" "☄" "★" "☑" "☒" "☕" "☘" "☛" "☞" "☠" "☪" "☫" "☬" "☯" "☸" "☹" "☺" "♕" "♖" "♗" "♘" "♞" "♠" "♣" "♥" "♦" "♨" "♩" "♪" "♫" "♭" "♯" "♻" "⚀" "⚁" "⚂" "⚃" "⚄" "⚅" "⚐" "⚒" "⚓" "⚔" "⚕" "⚚" "⚛" "⚠" "⚡" "✂" "✆" "✈" "✌" "✍" "✏" "✓" "✖" "✗" "✞" "✡" "✪" "✯" "✹" "❀" "❄" "❖" "➔" "➜" "➠" "➢" "➥" "➲" "➾" "")
-  RANDOM=$$$(date +%s)
-  echo ${chars[$RANDOM % ${#chars[@]}]}
-}
-# function spchar2 { chars=("☠" "☺" "☀" "☁" "☂" "☃"); RANDOM=$$$(date +%s); echo ${chars[$RANDOM % ${#chars[@]}]}; }
-
+if [ -f $HOME/.special_characters ]; then
+  source $HOME/.special_characters
+else
+  function spchar {
+    echo "$"
+  }
+fi
 export PS1='\[\e[0;44;93m\]\W\[\e[0m\] \[\e[1;35m\]`date +'%H:%M'` \[\e[1;31m\]`spchar` \[\e[0m\]'
-# export PS1='\[\e[0;44;93m\]\W\[\e[0m\] \[\e[1;35m\]`date +'%H:%M'` \[\e[1;31m\] \[\e[0m\]'
 # export PS1="\W \u\$ "
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
-#export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007";history -a ; history -n ; echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
-#export PROMPT_COMMAND='echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
-#export PROMPT_COMMAND='echo $GEM_HOME'
-# export PROMPT_COMMAND='ruby -v;echo $GEM_HOME'
-# export PROMPT_COMMAND='ruby -v'
-
-#case $TERM in
-#    xterm*)
-#        # PS1="\[\033]0;\u@\h: \w\007\]bash\\$ "
-#        # PS1="\[\033[1;37m\]\[\033[41m\][\$(date +%H:%M:%S)][\u@\h \W]# \[\033[0m\]"
-#        PS1="\W \u\$ "
-#        ;;
-#    *)
-#        PS1="\W \u\$ "
-#        ;;
-#esac
 
 # colored grep
 export GREP_OPTIONS='--color=auto'
