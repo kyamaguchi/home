@@ -1,26 +1,53 @@
-PATH=$PATH:$HOME/.gem/ruby/1.8/bin
-export PATH
+# .bashrc
 
-export EDITOR=vi
-export SVN_EDITOR=vi
-export GEMEDITOR='mate -w'
-export VISUAL=vi
+if [[ $OSTYPE == darwin* ]] ; then
+  PATH=$PATH:$HOME/.gem/ruby/1.8/bin
+  export PATH
 
-export COPYFILE_DISABLE=true
+  export EDITOR=vi
+  export SVN_EDITOR=vi
+  export GEMEDITOR='mate -w'
+  export VISUAL=vi
+
+  export COPYFILE_DISABLE=true
+
+  ## Terminal
+  if [ -f $HOME/.special_characters ]; then
+    source $HOME/.special_characters
+  else
+    function spchar {
+      echo "$"
+    }
+  fi
+
+  export PS1='\[\e[0;44;93m\]\W\[\e[0m\] \[\e[1;35m\]`date +'%H:%M'` \[\e[1;31m\]`spchar` \[\e[0m\]'
+  export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; echo $(rbenv version-name) | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
+else
+  # Source global definitions
+  if [ -f /etc/bashrc ]; then
+         . /etc/bashrc
+  fi
+
+  # User specific aliases and functions
+
+  # User command aliases
+  alias useradd='sudo useradd'
+  alias usermod='sudo usermod'
+  alias userdel='sudo userdel'
+
+  # Other aliases
+  alias apachectl='sudo apachectl'
+  alias chkconfig='sudo chkconfig'
+  alias gpasswd='sudo gpasswd'
+  alias service='sudo service'
+  alias reboot='sudo reboot'
+  alias yum='sudo yum'
+
+  export PS1="\W \u\$ "
+fi
 
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
-## Terminal
-if [ -f $HOME/.special_characters ]; then
-  source $HOME/.special_characters
-else
-  function spchar {
-    echo "$"
-  }
-fi
-export PS1='\[\e[0;44;93m\]\W\[\e[0m\] \[\e[1;35m\]`date +'%H:%M'` \[\e[1;31m\]`spchar` \[\e[0m\]'
-# export PS1="\W \u\$ "
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
 
 # colored grep
 export GREP_OPTIONS='--color=auto'
