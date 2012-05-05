@@ -21,6 +21,7 @@ if [[ $OSTYPE == darwin* ]] ; then
   fi
 
   export PS1='\[\e[0;44;93m\]\W\[\e[0m\] \[\e[1;35m\]`date +'%H:%M'` \[\e[1;31m\]`spchar` \[\e[0m\]'
+  # export PS1="\W \u\$ "
   export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; echo $(rbenv version-name) | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
 else
   # Source global definitions
@@ -42,8 +43,6 @@ else
   alias service='sudo service'
   alias reboot='sudo reboot'
   alias yum='sudo yum'
-
-  export PS1="\W \u\$ "
 fi
 
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
