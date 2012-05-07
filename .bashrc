@@ -44,7 +44,12 @@ else
   alias yum='sudo yum'
 fi
 
-if which rbenv >/dev/null; then
+if [[ -s $HOME/.rbenv ]] ; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+if which rbenv &>/dev/null; then
   export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo $(rbenv version-name) | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
 else
   export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007" ; echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
