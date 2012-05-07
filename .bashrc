@@ -162,6 +162,7 @@ alias rbev='rbenv versions'
 alias rbei='rbenv install'
 alias rber='rbenv rehash'
 alias rbeg='rbenv global'
+alias rbel='rbenv local'
 
 alias rla=request-log-analyzer
 # Usage $ cat log/production.log | rl
@@ -171,6 +172,7 @@ alias freq='mask_path.rb | sort | uniq -c | sort -n | awk '"'"'$1>1 {print}'"'"'
 alias freq2='mask_path.rb | sort | uniq -c | sort -n | awk '"'"'$1>1 {print}'"'"' | awk '"'"'$3 != "" {print}'"'"' | grep -v -P "(cd|git)"'
 alias freq3='mask_path.rb | grep "|" | sort | uniq -c | sort -n | awk '"'"'$1>1 {print}'"'"''
 
+alias redis-server-with-conf='redis-server /usr/local/etc/redis.conf'
 alias selenium-server='java -jar /Applications/Selenium/selenium-server-standalone-2.21.0.jar -Dwebdriver.firefox.bin=/Applications/Firefox.app/Contents/MacOS/firefox-bin'
 alias iphone='open /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
