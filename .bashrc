@@ -79,7 +79,6 @@ export HISTCONTROL="ignoredups"
 alias df='df -h'
 
 alias sl=ls
-alias ls='ls -G'        # Compact view, show colors
 alias la='ls -AF'       # Compact view, show hidden
 alias ll='ls -alth'     # 'ls -al'
 alias l='ls -a'
