@@ -104,7 +104,7 @@ then
 fi
 
 alias utf='nkf -w --overwrite'
-
+alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | grep -v -P "yml$"'
 #alias tarc='tar czvf'
 #alias tarx='tar zxvf'
 
@@ -149,6 +149,8 @@ alias mg='mate ~/.gitconfig'
 
 alias be='bundle exec'
 alias brake='bundle exec rake'
+alias beat='bundle exec autotest'
+alias beats='SELENIUM=true bundle exec autotest'
 alias cap='bundle exec cap'
 alias cap_orig='$GEM_HOME/bin/cap'
 
