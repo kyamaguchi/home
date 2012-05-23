@@ -104,6 +104,7 @@ then
 fi
 
 alias utf='nkf -w --overwrite'
+alias sjis='nkf -s --overwrite'
 alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | grep -v -P "yml$"'
 #alias tarc='tar czvf'
 #alias tarx='tar zxvf'
