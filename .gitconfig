@@ -48,7 +48,7 @@
   difff = diff
   diffm = diff --diff-filter=M
   praise = blame
-  fp = fetch -p
+  fp = fetch -p --all
   pr = pull --rebase
   cl = clone
   clm = clone --mirror

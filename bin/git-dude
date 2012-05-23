@@ -50,7 +50,7 @@ while true; do
       repo_name=$(basename "$dir_name" .git)
       cd "$dir_name"
 
-      changes=$(git fetch 2>&1 | grep -F -- '->' | sed -E 's/^\s+\+\s+//')
+      changes=$(git fetch -p --all 2>&1 | grep -F -- '->' | sed -E 's/^\s+\+\s+//')
 
       ### Custom Log
       if [[ -n "$changes" ]]; then
