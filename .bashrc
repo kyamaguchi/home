@@ -93,7 +93,9 @@ alias -- -="cd -"        # Go back
 
 alias stop='top -o CPU -s 5'
 
-alias h='history'
+alias h='ghci'
+
+alias hi='history'
 alias historyc='history | cut -c8-'
 alias historyd='history | cut -c8- | sed -e "s/^/$ /"'
 
