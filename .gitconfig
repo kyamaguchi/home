@@ -45,8 +45,8 @@
   dn = diff --name-only
   dwd = diff --word-diff
   files = "!f() { git diff --name-status $1^ $1; }; f"
-  difff = diff
   diffm = diff --diff-filter=M
+  difff = diff --diff-filter=M -w --word-diff
   praise = blame
   fp = fetch -p --all
   pr = pull --rebase
