@@ -82,6 +82,7 @@ bin/ree-*
 bin/ri-ree*
 bin/rvm*
 bin/testrb-ree*
+bin/subl
 
 Applications
 Calibre Library

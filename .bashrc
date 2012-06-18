@@ -6,8 +6,8 @@ if [[ $OSTYPE == darwin* ]] ; then
 
   export EDITOR=vi
   export SVN_EDITOR=vi
-  export GEMEDITOR='mate -w'
-  export VISUAL=vi
+  export GEMEDITOR='subl -w'
+  export VISUAL='subl -w'
 
   export COPYFILE_DISABLE=true
 
@@ -225,6 +225,7 @@ alias findgrep='grepfind'
 # find_larger: find files larger than a certain size (in bytes)
 find_larger() { find . -type f -size +${1}c ; }
 
+function sublg { bundle show $@ | xargs subl; }
 
 # alias for AWS
 alias ec2-start='ec2-run-instances'
