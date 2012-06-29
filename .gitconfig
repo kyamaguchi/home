@@ -87,6 +87,20 @@
   whatsnewlog = !"sh -c \"git log  --graph --pretty=format:'%Creset%C(red bold)[%ad] %C(blue bold)%h%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset'  --abbrev-commit --date=short $(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)@{1}..$(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)\""
   whatsnew = !"sh -c \"git diff  $(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)@{1}..$(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)\""
 
+  # Gitflow
+  feature = flow feature
+  ft = flow feature
+  fs = flow feature start
+  ff = flow feature finish
+  release = flow release
+  rl = flow release
+  rs = flow release start
+  rf = flow release finish
+  hotfix = flow hotfix
+  hf = flow hotfix
+  hs = flow hotfix start
+  hf = flow hotfix finish
+
 [apply]
   whitespace = strip
 [diff]
