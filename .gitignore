@@ -17,10 +17,12 @@
 .bash_profile.macports*
 .bitrock
 .bundler
+.caprc
 .cheat
 .config
 .crash_report_*
 .cups
+.dbshell
 .dbvis
 .deltafy
 .dvdcss
@@ -34,6 +36,7 @@
 .freemind
 .freeplane
 .gem
+.gitk
 .git-dude
 .googl
 .gorillarc
@@ -49,6 +52,7 @@
 .npm
 .passenger
 .pgpass
+.profile
 .putty
 .rbenv
 .rdebug_hist
