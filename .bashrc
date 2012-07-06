@@ -1,3 +1,9 @@
+### For .bash_profile
+# if [ -f ~/.bashrc ] ; then
+# . ~/.bashrc
+# fi
+######
+
 # .bashrc
 
 if [[ $OSTYPE == darwin* ]] ; then
