@@ -1,2 +1,7 @@
 *~
+.sass-cache
 .DS_Store
+*.sql
+*.tar.gz
+Termfile
+chromedriver.log

@@ -1,4 +1,5 @@
 *history
+*log
 
 .CFUserTextEncoding
 .DownloadManager
@@ -30,6 +31,7 @@
 .earthquake/*
 !.earthquake/*.sample
 .eclipse
+.eyrc
 .filezilla
 .fontconfig
 .fonts
@@ -61,6 +63,7 @@
 .rnd
 .rurema
 .rvm
+.secret
 .ssh
 .sshterm
 .subversion
@@ -87,6 +90,7 @@ bin/ri-ree*
 bin/rvm*
 bin/testrb-ree*
 bin/subl
+bin/aha
 
 Applications
 Calibre Library
@@ -94,7 +98,7 @@ Desktop
 Documents
 Downloads
 Dropbox
-Google Drive
+Google*
 Library
 Movies
 Music
@@ -109,6 +113,7 @@ evernote
 github
 local
 macports
+mbox
 projects
 rbenv-bundler
 ruby-build
