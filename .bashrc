@@ -189,6 +189,8 @@ alias redis-server-with-conf='redis-server /usr/local/etc/redis.conf'
 alias selenium-server='java -jar /Applications/Selenium/selenium-server-standalone-2.21.0.jar -Dwebdriver.firefox.bin=/Applications/Firefox.app/Contents/MacOS/firefox-bin'
 alias iphone='open /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
+alias pgs='/usr/local/bin/postgres -D /usr/local/var/postgres'
+
 # Common Rails command shortcuts
 # http://blog.envylabs.com/2010/07/common-rails-command-shortcuts/
 function ss {
