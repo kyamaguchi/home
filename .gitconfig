@@ -102,6 +102,8 @@
   hs = flow hotfix start
   hf = flow hotfix finish
 
+  sourcetree = !open -a SourceTree .
+
 [apply]
   whitespace = strip
 [diff]
