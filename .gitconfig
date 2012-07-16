@@ -25,6 +25,7 @@
   br = branch
   bl = branch -lf
   st = status
+  ts = status
   sts = status -s
   ci = commit
   ca = commit --amend
