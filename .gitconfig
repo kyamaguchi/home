@@ -48,6 +48,7 @@
   files = "!f() { git diff --name-status $1^ $1; }; f"
   diffm = diff --diff-filter=M
   difff = diff --diff-filter=M -w --word-diff
+  diffr = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   praise = blame
   fp = fetch -p --all
   pr = pull --rebase
