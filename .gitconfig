@@ -125,6 +125,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+	pager = nkf -w | LESSCHARSET=utf-8 less
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
