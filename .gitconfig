@@ -85,6 +85,8 @@
   # Add untracked files only
   addut=!git add $(git ls-files -o --exclude-standard)
 
+  resetall= !"git fetch -p --all ; git stash ; git checkout master ; git branch -lf develop origin/develop ; git branch -lf staging origin/staging ; git checkout develop; git branch -lf master" origin/master ; "
+
   # http://jeetworks.org/node/53
   whatsnewlog = !"sh -c \"git log  --graph --pretty=format:'%Creset%C(red bold)[%ad] %C(blue bold)%h%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset'  --abbrev-commit --date=short $(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)@{1}..$(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)\""
   whatsnew = !"sh -c \"git diff  $(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)@{1}..$(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)\""

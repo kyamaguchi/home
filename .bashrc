@@ -80,6 +80,7 @@ shopt -s histappend
 export HISTSIZE=10000
 # Don't put duplicate lines in the history and don't save
 export HISTCONTROL="ignoredups"
+export HISTTIMEFORMAT="%F %T "
 
 # alias rm='rm -i'
 alias df='df -h'
@@ -112,6 +113,7 @@ then
 fi
 
 alias utf='nkf -w --overwrite'
+alias utfall='find . -type f -name "*" -exec nkf -w --overwrite {} \;'
 alias sjis='nkf -s --overwrite'
 alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | grep -v -P "yml$"'
 #alias tarc='tar czvf'
