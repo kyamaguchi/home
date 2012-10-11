@@ -136,3 +136,5 @@
 	trustExitCode = true
 [rerere]
 	enabled = 1
+[branch]
+        autosetuprebase = always
