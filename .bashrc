@@ -115,7 +115,7 @@ fi
 alias utf='nkf -w --overwrite'
 alias utfall='find . -type f -name "*" -exec nkf -w --overwrite {} \;'
 alias sjis='nkf -s --overwrite'
-alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | grep -v -P "yml$"'
+alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | grep -P "\.rb"'
 #alias tarc='tar czvf'
 #alias tarx='tar zxvf'
 
