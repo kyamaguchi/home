@@ -136,8 +136,11 @@ alias g='git'
 alias gut=git
 alias got=git
 alias gti=git
+alias gst='git status'
 alias gitst='git status'
 alias gs='git status'
+alias gpod='git pull --rebase origin develop'
+alias gpom='git pull --rebase origin master'
 
 alias grepconf='grep -e "^[^#]"'
 # grep -rl "string" /path (recursive & files-with-matches)
