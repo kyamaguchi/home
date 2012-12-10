@@ -172,6 +172,9 @@ alias be='bundle exec'
 alias brake='bundle exec rake'
 alias beat='bundle exec autotest'
 alias beats='SELENIUM=true bundle exec autotest'
+
+alias bl='mv $HOME/.bundle_OFF $HOME/.bundle'
+alias bloff='mv $HOME/.bundle $HOME/.bundle_OFF'
 alias cap='bundle exec cap'
 alias cap_orig='$GEM_HOME/bin/cap'
 
