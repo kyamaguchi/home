@@ -205,6 +205,17 @@ alias iphone='open /Developer/Platforms/iPhoneSimulator.platform/Developer/Appli
 
 alias pgs='/usr/local/bin/postgres -D /usr/local/var/postgres'
 
+
+function eysshs {
+  echo "Usage: $ eysshs 'ls /path/to/'"
+  ey ssh "echo \"### \`hostname\` ###\";$@" -e staging --all
+}
+function eysshproduction {
+  echo "Usage: $ eysshproduction 'ls /path/to/'"
+  ey ssh "echo \"### \`hostname\` ###\";$@" -e production --all
+}
+
+
 # Common Rails command shortcuts
 # http://blog.envylabs.com/2010/07/common-rails-command-shortcuts/
 function ss {
