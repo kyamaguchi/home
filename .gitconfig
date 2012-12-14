@@ -49,6 +49,10 @@
   diffm = diff --diff-filter=M
   difff = diff --diff-filter=M -w --word-diff
   diffr = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+  # add changes excluding trailing whitespace diffs
+  adds = !"git diff -w --no-color | git apply --cached"
+  # checkout all modified files
+  cow = !"git status | grep modified | awk '{print $3}' | xargs git checkout"
   praise = blame
   fp = fetch -p --all
   pr = pull --rebase
