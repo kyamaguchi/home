@@ -53,7 +53,7 @@
   addw = !"git diff -w --no-color | git apply --cached"
   # checkout all modified/deleted files
   com = !"git status | grep modified | awk '{print $3}' | xargs git checkout"
-  com = !"git status | grep deleted | awk '{print $3}' | xargs git checkout"
+  cod = !"git status | grep deleted | awk '{print $3}' | xargs git checkout"
   praise = blame
   fp = fetch -p --all
   pr = pull --rebase
