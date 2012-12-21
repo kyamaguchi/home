@@ -126,7 +126,7 @@
   main-window-maximized = false
   main-window-geometry = 1734x930+20+19
 [init]
-#  templatedir = ~/git-hooks-templates
+  templatedir = ~/.git_template
 #[github]
 #  user=user
 
