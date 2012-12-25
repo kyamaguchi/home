@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+class String
+  # colorization
+  #   from http://stackoverflow.com/questions/1489183/colorized-ruby-output
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
+  def red ; colorize(31) ; end
+  def green ; colorize(32) ; end
+  def yellow ; colorize(33) ; end
+  def pink ; colorize(35) ; end
+end
+
+
+checks = %w{
+  debugger
+  logger
+  puts
+  save_and_open_page
+  console.log
+}
+
+errors = []
+
+files_changed = `git diff --cached --name-only HEAD`
+files_changed.each_line do |filename|
+  filename.chomp!
+  changes = `git diff --cached -U0 HEAD -- #{filename}`
+  checks.each do |check|
+    result = changes.split(/\n/).grep(/^\+.*\b#{check}\b/)
+    unless result.empty?
+      errors << {:name => check, :file => filename, :matches => result}
+    end
+  end
+end
+
+unless errors.empty?
+  errors.each do |error|
+    puts "'#{error[:name]}' found in file: #{error[:file]}".yellow
+    error[:matches].each {|m| puts "  -> #{m}" }
+  end
+  puts "COMMIT REJECTED. Please remove them before commiting OR use --no-verify".red
+  exit 1
+end
