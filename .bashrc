@@ -122,7 +122,7 @@ alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | gre
 alias rspeci='rspec spec/integration'
 alias rspecj='rspec --tag js'
 alias rspecf='rspec --tag ~js'
-alias rbp='rails_best_practices'
+alias rbp='rails_best_practices -f html . ; open rails_best_practices_output.html'
 alias db_migrate='bundle exec rake db:migrate ; RAILS_ENV=test bundle exec rake db:migrate'
 alias db_rollback='bundle exec rake db:rollback ; RAILS_ENV=test bundle exec rake db:rollback'
 alias db_drop='bundle exec rake db:drop ; RAILS_ENV=test bundle exec rake db:drop'
