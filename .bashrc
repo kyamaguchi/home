@@ -157,7 +157,8 @@ alias cst='consular start today'
 alias tst='consular start today'
 
 alias s=subl
-alias sublc='cd ~/Library/Application\ Support/Sublime\ Text\ 2/'
+alias sublc2='cd ~/Library/Application\ Support/Sublime\ Text\ 2/'
+alias sublc='cd ~/Library/Application\ Support/Sublime\ Text\ 3/'
 alias vb='vi ~/.bashrc'
 alias mb='subl ~/.bashrc'
 alias sb='source ~/.bashrc'
