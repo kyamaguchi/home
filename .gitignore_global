@@ -6,3 +6,5 @@
 Termfile
 chromedriver.log
 _notes
+coverage
+db/*sqlite*
