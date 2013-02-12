@@ -111,6 +111,8 @@
   hs = flow hotfix start
   hf = flow hotfix finish
 
+  crlfon= !git config --global core.autocrlf input
+  crlfoff= !git config --global core.autocrlf false
   sourcetree = !open -a SourceTree .
 
 [apply]
