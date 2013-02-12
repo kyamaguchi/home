@@ -183,6 +183,7 @@ alias cap_orig='$GEM_HOME/bin/cap'
 alias gem137='gem update --system 1.3.7'
 alias gemlatest='gem update --system'
 alias gemformat="perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/*/specifications/*.gemspec"
+alias gemlistall='gem list --all --remote'
 
 alias st='git sourcetree'
 
