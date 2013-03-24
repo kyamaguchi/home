@@ -248,6 +248,13 @@ function sg {
 #-----------
 # Searching:
 #-----------
+
+# Searching bundle gems http://www.saturnflyer.com/blog/jim/2013/03/15/searching-through-your-bundled-gems
+# Usage : $ agb textarea $ agb "form textarea"
+agb () {
+  ag "$@" `bundle show --paths`
+}
+
 # ff:  to find a file under the current directory
 ff () { /usr/bin/find . -name "$@" ; }
 # ffs: to find a file whose name starts with a given string
