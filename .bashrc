@@ -188,6 +188,7 @@ alias gemlistall='gem list --all --remote'
 alias st='git sourcetree'
 
 alias rbed='ruby-build --definitions'
+alias rbeu='brew uninstall ruby-build && brew install --HEAD ruby-build'
 alias rbev='rbenv versions'
 alias rbei='rbenv install'
 alias rber='rbenv rehash'
