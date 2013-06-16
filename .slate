@@ -31,6 +31,7 @@ alias mon-main        1920x1080
 # alias 3-l-top move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-hp22inch}
 # alias 3-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-hp22inch}
 
+alias 1-full   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY            ${mon-main}
 alias 1-left   move screenOriginX;screenOriginY+screenSizeY/8                 screenSizeX/2;7*screenSizeY/8      ${mon-main}
 alias 1-right  move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/8   screenSizeX/2;7*screenSizeY/8      ${mon-main}
 alias 1-bot-l  move screenOriginX;screenOriginY+screenSizeY/8                 5*screenSizeX/6;7*screenSizeY/8    ${mon-main}
@@ -125,6 +126,7 @@ layout 1monitor 'Sublime Text':REPEAT                    ${1-right}
 
 bind right:alt;cmd ${1-right}
 bind left:alt;cmd  ${1-left}
+bind a:alt;shift   ${1-full}
 bind z:alt;shift   ${1-bot-l}
 bind x:alt;shift   ${1-bot-r}
 
