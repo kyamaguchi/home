@@ -182,8 +182,8 @@ alias beats='SELENIUM=true bundle exec autotest'
 alias bl='mv $HOME/.bundle_OFF $HOME/.bundle'
 alias bloff='mv $HOME/.bundle $HOME/.bundle_OFF'
 
-alias bapi_on='ruby -i -pe "gsub %r{^source '\''https://rubygems\.org'\''}, '\''source \'\''http://bundler-api.herokuapp.com/\'\'''\''" Gemfile'
-alias bapi_off='ruby -i -pe "gsub %r{^source.*$}, '\''source \'\''https://rubygems.org\'\'''\''" Gemfile'
+alias bapi_on='ruby -i -pe "gsub %r{^(source.*)https://rubygems\.org(.*)}, '\''\1http://bundler-api.herokuapp.com/\2'\''" Gemfile'
+alias bapi_off='ruby -i -pe "gsub %r{^(source.*)http://bundler-api\.herokuapp\.com/(.*)}, '\''\1https://rubygems.org\2'\''" Gemfile'
 
 alias cap='bundle exec cap'
 alias cap_orig='$GEM_HOME/bin/cap'
