@@ -150,3 +150,5 @@
 	enabled = 1
 [branch]
         autosetuprebase = always
+[push]
+	default = current
