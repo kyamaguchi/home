@@ -243,6 +243,13 @@ alias sim='open ~/Library/Application\ Support/iPhone\ Simulator/6.1/Application
 
 alias pgs='/usr/local/bin/postgres -D /usr/local/var/postgres'
 
+# Engine yard
+alias ey_production='ey status -e production | grep Commit | awk {'"'"'print $3'"'"'} | xargs git branch -lf ey_production && git log --graph --decorate --pretty=oneline --abbrev-commit -30 ey_production'
+alias ey_staging='ey status -e staging | grep Commit | awk {'"'"'print $3'"'"'} | xargs git branch -lf ey_staging && git log --graph --decorate --pretty=oneline --abbrev-commit -30 ey_staging'
+
+
+alias eyssh='ey ssh -e staging'
+alias eysshdb='ey ssh -e staging --db-master'
 
 function eysshs {
   echo "Usage: $ eysshs 'ls /path/to/'"
