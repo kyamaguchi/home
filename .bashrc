@@ -239,6 +239,7 @@ alias freq3='mask_path.rb | grep "|" | sort | uniq -c | sort -n | awk '"'"'$1>1 
 alias redis-server-with-conf='redis-server /usr/local/etc/redis.conf'
 alias selenium-server='java -jar /Applications/Selenium/selenium-server-standalone-2.21.0.jar -Dwebdriver.firefox.bin=/Applications/Firefox.app/Contents/MacOS/firefox-bin'
 alias iphone='open /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
+alias sim='open ~/Library/Application\ Support/iPhone\ Simulator/6.1/Applications/'
 
 alias pgs='/usr/local/bin/postgres -D /usr/local/var/postgres'
 
