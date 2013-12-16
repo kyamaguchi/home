@@ -24,6 +24,7 @@
   co = checkout
   br = branch
   bl = branch -lf
+  bd = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   st = status
   ts = status
   sts = status -s
@@ -35,6 +36,7 @@
   rs = rebase --skip
   rh = reset HEAD
   ml = merge --no-ff --log
+  mo = "!git merge origin/`git rev-parse --abbrev-ref HEAD`"
   # Find common ancestor of two branches
   anc = merge-base
   anch = merge-base HEAD
