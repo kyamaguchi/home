@@ -204,6 +204,31 @@ alias rbeg='rbenv global'
 alias rbel='rbenv local'
 
 alias rla=request-log-analyzer
+
+function pps() {
+  if [[ -z "$@" ]];then
+    papertrail -f -g staging staging.log | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[1;35m\1\e[0m\2\e[1;33m\3\e[0m\4\e[0;36m\5\e[0m/g';
+  else
+    papertrail -f -g staging staging.log $@ | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[1;35m\1\e[0m\2\e[1;33m\3\e[0m\4\e[0;36m\5\e[0m/g' | perl -pe "s/($@)(.*)/\e[1;31m\1\e[0m\2/g";
+  fi
+}
+function ppp() {
+  if [[ -z "$@" ]];then
+    papertrail -f -g production production.log | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[1;35m\1\e[0m\2\e[1;33m\3\e[0m\4\e[0;36m\5\e[0m/g';
+  else
+    papertrail -f -g production production.log $@ | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[1;35m\1\e[0m\2\e[1;33m\3\e[0m\4\e[0;36m\5\e[0m/g' | perl -pe "s/($@)(.*)/\e[1;31m\1\e[0m\2/g";
+  fi
+}
+function ppt() {
+  if [[ -z "$@" ]];then
+    echo "No \$@";
+    echo $@;
+  else
+    echo $@;
+  fi
+}
+
+
 # Usage $ cat log/production.log | rl
 alias rl='grep Started | awk {'"'"'print $3'"'"'} | sed -e '"'"'s/[0-9][0-9]*/X/g'"'"'| sort | uniq -c | sort -rn'
 
