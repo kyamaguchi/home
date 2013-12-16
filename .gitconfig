@@ -25,6 +25,7 @@
   br = branch
   bl = branch -lf
   bd = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  bmr = !git branch -r --merged
   st = status
   ts = status
   sts = status -s
