@@ -286,6 +286,10 @@ function sg {
 }
 
 
+function brewfix {
+  brew unlink $@ && brew link $@
+}
+
 ## http://hayne.net/MacDev/Bash/aliases.bash
 #-----------
 # Searching:
