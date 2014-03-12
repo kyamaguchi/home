@@ -151,7 +151,8 @@ alias gpom='git pull --rebase origin master'
 
 alias grepconf='grep -e "^[^#]"'
 # grep -rl "string" /path (recursive & files-with-matches)
-alias greprl='grep -rl'
+alias greprl='ggrep -rl'
+alias grepc='LANG=C ggrep'
 
 alias cl='consular list'
 alias ce='consular edit'
@@ -211,6 +212,9 @@ function pps() {
   else
     papertrail -f -g staging staging.log $@ | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[1;35m\1\e[0m\2\e[1;33m\3\e[0m\4\e[0;36m\5\e[0m/g' | perl -pe "s/($@)(.*)/\e[1;31m\1\e[0m\2/g";
   fi
+}
+function ppe() {
+  papertrail -f -g $1 staging.log $2 | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[1;35m\1\e[0m\2\e[1;33m\3\e[0m\4\e[0;36m\5\e[0m/g' | perl -pe "s/($@)(.*)/\e[1;31m\1\e[0m\2/g";
 }
 function ppp() {
   if [[ -z "$@" ]];then
@@ -285,9 +289,16 @@ function sg {
   fi
 }
 
-
 function brewfix {
   brew unlink $@ && brew link $@
+}
+
+function pg_dup {
+  if [[ -n "$2" ]];then
+    createdb -U postgres -O postgres -T $1 $2
+  else
+    echo "Usage: $ pg_dup copy_from copy_to"
+  fi
 }
 
 ## http://hayne.net/MacDev/Bash/aliases.bash
