@@ -152,6 +152,7 @@ alias gpom='git pull --rebase origin master'
 alias grepconf='grep -e "^[^#]"'
 # grep -rl "string" /path (recursive & files-with-matches)
 alias greprl='ggrep -rl'
+alias greprx='ggrep --exclude-dir=tmp --exclude-dir=log -r'
 alias grepc='LANG=C ggrep'
 
 alias cl='consular list'
