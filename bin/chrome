@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+version = ARGV[0]
+raise "Version needs to be specified properly. e.g. $ chrome 30" unless version =~ /\A\d+\z/
+
+chrome_app = "/Applications/Google Chrome#{version}.app"
+puts chrome_app
+if File.exists?(chrome_app)
+  chrome_profile_dir = "#{ENV['HOME']}/Library/Application Support/Google/Chrome#{version}"
+  `"#{chrome_app}/Contents/MacOS/Google Chrome" --user-data-dir="#{chrome_profile_dir}"`
+else
+  `open 'http://google-chrome.en.uptodown.com/mac/old'`
+end
