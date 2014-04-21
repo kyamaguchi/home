@@ -127,7 +127,7 @@ alias db_migrate='bundle exec rake db:migrate ; RAILS_ENV=test bundle exec rake 
 alias db_rollback='bundle exec rake db:rollback ; RAILS_ENV=test bundle exec rake db:rollback'
 alias db_drop='bundle exec rake db:drop ; RAILS_ENV=test bundle exec rake db:drop'
 alias testdb_reset='RAILS_ENV=test bundle exec rake db:drop ; RAILS_ENV=test bundle exec rake db:migrate'
-alias rmr='rake nibs:clean && rake resources'
+alias rmr='bundle exec rake nibs:clean && bundle exec rake resources'
 alias rakeq='rake simulator args="-com.apple.CoreData.SQLDebug 1"'
 alias rmlog='cat /Library/RubyMotion/NEWS'
 alias rmib='rake ib:project && cp'
