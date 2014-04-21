@@ -347,3 +347,5 @@ alias ec2-auth='ec2-authorize default -p 22 && ec2-authorize default -p 80'
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then PATH=$PATH:$HOME/.rvm/bin ; fi # Add RVM to PATH for scripting
 
 export PATH=$PATH:~/bin
+
+export GOPATH=$HOME/go
