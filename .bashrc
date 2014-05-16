@@ -113,6 +113,7 @@ then
 fi
 
 alias utf='nkf -w --overwrite'
+alias utfhalf='nkf -xw --overwrite'
 alias utfall='find . -type f -name "*" -exec nkf -w --overwrite {} \;'
 alias sjis='nkf -s --overwrite'
 alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | grep -P "\.rb"'

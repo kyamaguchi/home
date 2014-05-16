@@ -140,7 +140,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = nkf -w | LESSCHARSET=utf-8 less
+	pager = nkf -xw | LESSCHARSET=utf-8 less
 	safecrlf = true
 	autocrlf = input
 [difftool "sourcetree"]
