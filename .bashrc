@@ -112,9 +112,9 @@ then
   alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 fi
 
-alias utf='nkf -w --overwrite'
-alias utfhalf='nkf -xw --overwrite'
-alias utfall='find . -type f -name "*" -exec nkf -w --overwrite {} \;'
+alias utf='nkf -wd --overwrite'
+alias utfhalf='nkf -xwd --overwrite'
+alias utfall='find . -type f -name "*" -exec nkf -wd --overwrite {} \;'
 alias sjis='nkf -s --overwrite'
 alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | grep -P "\.rb"'
 #alias tarc='tar czvf'
