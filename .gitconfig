@@ -64,6 +64,7 @@
   clm = clone --mirror
   zip = archive --format=zip HEAD -o
   lg = log -p
+  lf = log -p --follow
   lt = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
   lof = log --name-status
   lgp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
