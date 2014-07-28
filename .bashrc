@@ -87,7 +87,7 @@ alias df='df -h'
 
 alias sl=ls
 alias la='ls -AF'       # Compact view, show hidden
-alias ll='ls -alth'     # 'ls -al'
+alias ll='ls -althr'     # 'ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
