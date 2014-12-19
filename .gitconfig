@@ -27,6 +27,7 @@
   bd = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   bmr = !git branch -r --merged
   brt = "! f() { for k in $(git branch -r $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
+  blt = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
   bt = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
   st = status
   ts = status
@@ -98,6 +99,21 @@
   # Add untracked files only
   addut=!git add $(git ls-files -o --exclude-standard)
 
+  sl = stash list
+  sp = stash pop
+  ss = stash show -p
+  sd = stash drop
+  ss1 = stash show -p stash@{1}
+  ss2 = stash show -p stash@{2}
+  ss3 = stash show -p stash@{3}
+  ss4 = stash show -p stash@{4}
+  ss5 = stash show -p stash@{5}
+  ss6 = stash show -p stash@{6}
+  ss7 = stash show -p stash@{7}
+  ss8 = stash show -p stash@{8}
+  ss9 = stash show -p stash@{9}
+
+  rd = rebase develop
   resetm = reset origin/master
   resetall= !"git fetch -p --all ; git stash ; git checkout master ; git branch -lf develop origin/develop ; git branch -lf staging origin/staging ; git checkout develop; git branch -lf master origin/master ; bundle install ;"
 
