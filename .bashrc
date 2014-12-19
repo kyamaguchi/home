@@ -321,6 +321,10 @@ ffs () { /usr/bin/find . -name "$@"'*' ; }
 # ffe: to find a file whose name ends with a given string
 ffe () { /usr/bin/find . -name '*'"$@" ; }
 
+clear_git () {
+  find . | grep -p ".git$" | xargs rm -rf
+}
+
 # grepfind: to grep through files found by find, e.g. grepf pattern '*.c'
 # note that 'grep -r pattern dir_name' is an alternative if want all files
 grepfind () { find . -type f -name "$2" -print0 | xargs -0 grep "$1" ; }
