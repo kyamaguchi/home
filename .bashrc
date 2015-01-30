@@ -156,6 +156,8 @@ alias greprl='ggrep -rl'
 alias greprx='ggrep --exclude-dir=tmp --exclude-dir=log -r'
 alias grepc='LANG=C ggrep'
 
+alias pjson='python -mjson.tool'
+
 alias cl='consular list'
 alias ce='consular edit'
 alias cs='consular start'
