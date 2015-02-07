@@ -33,7 +33,9 @@
   ts = status
   sts = status -s
   ci = commit
+  ci = commit --no-verify
   ca = commit --amend
+  can = commit --amend --no-verify
   ri = rebase -i
   rc = rebase --continue
   ra = rebase --abort
