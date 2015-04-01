@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rspec $(git status -s | awk '{if ($1 == "M") print $2}' | grep spec/features)
