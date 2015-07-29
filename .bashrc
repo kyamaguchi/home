@@ -77,7 +77,8 @@ shopt -s histappend
 # Whenever displaying the prompt, write the previous line to disk and read unread history lines
 #export PROMPT_COMMAND="history -a; history -n"
 # increase history size
-export HISTSIZE=10000
+export HISTSIZE=100000
+export SAVEHIST=100000
 # Don't put duplicate lines in the history and don't save
 export HISTCONTROL="ignoredups"
 export HISTTIMEFORMAT="%F %T "
