@@ -70,6 +70,8 @@
   zip = archive --format=zip HEAD -o
   lg = log -p
   lf = log -p --follow
+  lreg = "!f() { git log -p -S''$1'' --pickaxe-regex; }; f"
+  lregx = "!f() { git log -p -S''$1'' --pickaxe-regex -- . ':(exclude)*ss'; }; f"
   lt = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
   lof = log --name-status
   lgp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
