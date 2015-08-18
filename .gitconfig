@@ -52,6 +52,7 @@
   dc = diff --cached
   dw = diff -w
   dn = diff --name-only
+  dp = diff --patience
   dwd = diff --word-diff
   files = "!f() { git diff --name-status $1^ $1; }; f"
   diffm = diff --diff-filter=M
