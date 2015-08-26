@@ -318,6 +318,14 @@ agb () {
   ag "$@" `bundle show --paths`
 }
 
+run() {
+  number=$1
+  shift
+  for i in `seq $number`; do
+    $@
+  done
+}
+
 # ff:  to find a file under the current directory
 ff () { /usr/bin/find . -name "$@" ; }
 # ffs: to find a file whose name starts with a given string
