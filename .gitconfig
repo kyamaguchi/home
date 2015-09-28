@@ -36,6 +36,7 @@
   ci = commit --no-verify
   ca = commit --amend
   can = commit --amend --no-verify
+  commmit = commit
   ri = rebase -i
   rc = rebase --continue
   ra = rebase --abort
@@ -70,6 +71,7 @@
   clm = clone --mirror
   zip = archive --format=zip HEAD -o
   lg = log -p
+  lw = log -p -w
   lf = log -p --follow
   lreg = "!f() { git log -p -S''$1'' --pickaxe-regex; }; f"
   lregx = "!f() { git log -p -S''$1'' --pickaxe-regex -- . ':(exclude)*ss'; }; f"
