@@ -146,6 +146,7 @@
   crlfoff= !git config --global core.autocrlf false
   sourcetree = !open -a SourceTree .
 
+  open = !sh ~/bin/gitopen.sh
 [apply]
   whitespace = strip
 [diff]
