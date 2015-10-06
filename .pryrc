@@ -1,6 +1,6 @@
 ## https://gist.github.com/olivierlacan/1563187
 # switch default editor for pry to sublime text
-Pry.config.editor = "subl"
+Pry.config.editor = proc {|f,l| "subl #{f}:#{l}" }
 
 # format prompt to be <Rails version>@<ruby version>(<object>)>
 Pry.config.prompt = proc do |obj, level, _|
