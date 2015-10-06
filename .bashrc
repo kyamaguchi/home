@@ -301,7 +301,7 @@ function brewfix {
 
 function pg_dup {
   if [[ -n "$2" ]];then
-    createdb -U postgres -O postgres -T $1 $2
+    createdb -U $USER -O $USER -T $1 $2
   else
     echo "Usage: $ pg_dup copy_from copy_to"
   fi
