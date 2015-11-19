@@ -19,11 +19,7 @@ then
   HAS_STASHED_CHANGES=true
 fi
 
-if [ -n "$EDIT" ]; then
-  git rebase --interactive --autosquash $COMMIT_TO_BE_FIXED~
-else
-  GIT_SEQUENCE_EDITOR='true' git rebase --interactive --autosquash $COMMIT_TO_BE_FIXED~
-fi
+GIT_SEQUENCE_EDITOR='true' git rebase --interactive --autosquash $COMMIT_TO_BE_FIXED~
 
 if [[ -n "$HAS_STASHED_CHANGES" ]]
 then
