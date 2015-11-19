@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# https://github.com/deiwin/git-dotfiles/blob/docs/bin/git-fixup
+
+set -e
+
+# Get the reference to the commit before creating the fixup commit,
+# because, say, if the argument is relative to the HEAD then the
+# commit it refers to will change once we create a new commit on the
+# HEAD.
+COMMIT_TO_BE_FIXED=`git show --format=%H --no-patch $1`
+git commit --fixup=$COMMIT_TO_BE_FIXED
+# Stash unstaged changes (the staged changes will already be in the
+# commit created above) to avoid not being able to run the rebase
+# command.
+if [[ -n $(git status -s) ]]
+then
+  git stash
+  HAS_STASHED_CHANGES=true
+fi
+
+if [ -n "$EDIT" ]; then
+  git rebase --interactive --autosquash $COMMIT_TO_BE_FIXED~
+else
+  GIT_SEQUENCE_EDITOR='true' git rebase --interactive --autosquash $COMMIT_TO_BE_FIXED~
+fi
+
+if [[ -n "$HAS_STASHED_CHANGES" ]]
+then
+  git stash pop
+fi
