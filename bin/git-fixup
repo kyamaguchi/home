@@ -13,7 +13,7 @@ git commit --fixup=$COMMIT_TO_BE_FIXED
 # Stash unstaged changes (the staged changes will already be in the
 # commit created above) to avoid not being able to run the rebase
 # command.
-if [[ -n $(git status -s) ]]
+if [[ -n $(git status -s | grep -v '??') ]]
 then
   git stash
   HAS_STASHED_CHANGES=true
