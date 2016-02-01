@@ -51,6 +51,9 @@
   cpn = cherry-pick -n
   df = diff
   dc = diff --cached
+  dcw = diff --cached -w --word-diff
+  dcr = diff --cached --color-words --word-diff-regex='\\w+|[^[:space:]]'
+  dcc = diff --cached --color-words --word-diff-regex=.
   dw = diff -w
   dn = diff --name-only
   dp = diff --patience
@@ -59,6 +62,7 @@
   diffm = diff --diff-filter=M
   difff = diff --diff-filter=M -w --word-diff
   diffr = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+  diffc = diff --color-words --word-diff-regex=.
   # add changes excluding trailing whitespace diffs
   addw = !"git diff -w --no-color | git apply --cached"
   addpw = add--interactive-words --patch=stage --
