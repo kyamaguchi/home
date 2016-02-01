@@ -61,6 +61,7 @@
   diffr = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   # add changes excluding trailing whitespace diffs
   addw = !"git diff -w --no-color | git apply --cached"
+  addpw = add--interactive-words --patch=stage --
   # checkout all modified/deleted files
   com = !"git status | grep modified | awk '{print $3}' | xargs git checkout"
   cod = !"git status | grep deleted | awk '{print $3}' | xargs git checkout"
