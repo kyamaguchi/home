@@ -64,6 +64,9 @@ fi
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 
+# reverse search http://superuser.com/questions/159106/reverse-i-search-in-bash
+stty -ixon
+
 # colored grep
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
