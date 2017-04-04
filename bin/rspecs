@@ -1,0 +1,4 @@
+#!/bin/sh
+
+grep -R --include="*_spec.rb" $1 .
+rspec --format documentation $(grep -R --include="*_spec.rb" -l $1 .)
