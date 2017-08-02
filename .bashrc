@@ -340,6 +340,18 @@ function pg_prev_copy {
   fi
 }
 
+function sshweb {
+  # ssh first pod in given namespace
+  if (( "$#" != 1 ))
+  then
+    echo "[Error] Give namespace to ${FUNCNAME[ 0 ]}"
+  else
+    ## TODO kubectl get pod --namespace xxx -l component=rails,role=web
+    local name=$(kubectl get pods --namespace=$@ | egrep '(web|rails)' | grep Running | head -n1 | awk '{print $1}')
+    kubectl exec -ti $name --namespace=$@ bash
+  fi
+}
+
 ## http://hayne.net/MacDev/Bash/aliases.bash
 #-----------
 # Searching:
