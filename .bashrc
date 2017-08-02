@@ -304,7 +304,39 @@ function pg_dup {
   if [[ -n "$2" ]];then
     createdb -U $USER -O $USER -T $1 $2
   else
+    echo "Copy database with given database name"
     echo "Usage: $ pg_dup copy_from copy_to"
+  fi
+}
+function pg_force {
+  if [[ -n "$2" ]];then
+    dropdb --if-exists $2
+    createdb -U $USER -O $USER -T $1 $2
+  else
+    echo "Copy database with given database name. Drop the target database when it exists"
+    echo "Usage: $ pg_force copy_from replace_with"
+  fi
+}
+function pg_copy {
+  if [[ -n "$1" ]];then
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+    local rev=$(git rev-parse --short HEAD)
+    echo "Creating $1-$branch-$rev"
+    createdb -U $USER -O $USER -T $1 $1-$branch-$rev
+  else
+    echo "Copy database with suffix of branch and revision"
+    echo "Usage: $ pg_copy copy_from"
+  fi
+}
+function pg_prev_copy {
+  if [[ -n "$1" ]];then
+    local branch=$(git rev-parse --abbrev-ref @{-1})
+    local rev=$(git rev-parse --short @{-1})
+    echo "Creating $1-$branch-$rev"
+    createdb -U $USER -O $USER -T $1 $1-$branch-$rev
+  else
+    echo "Copy database with suffix of previous branch and revision"
+    echo "Usage: $ pg_prev_copy copy_from"
   fi
 }
 
