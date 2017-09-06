@@ -27,4 +27,3 @@ if [ $? -ne 0 ]; then
 else
   /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ${file}${lineno:+:${lineno}}${colno:+:${colno}}
 fi
-

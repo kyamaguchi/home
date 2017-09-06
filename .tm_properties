@@ -15,4 +15,3 @@ excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 
 #excludeInBrowser  = "{$excludeInBrowser,$myExtraExcludes}"
 #exclude  = "{$exclude,$myExtraExcludes}"
-
