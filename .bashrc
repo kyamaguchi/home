@@ -294,9 +294,13 @@ function sshweb {
     echo "[Error] Give namespace to ${FUNCNAME[ 0 ]}"
   else
     ## TODO kubectl get pod --namespace xxx -l component=rails,role=web
-    local name=$(kubectl get pods --namespace=$@ | egrep '(web|rails)' | grep Running | head -n1 | awk '{print $1}')
+    local name=$(kubectl get pods --namespace=$@ | egrep '(web|rails|puma)' | grep Running | head -n1 | awk '{print $1}')
     kubectl exec -ti $name --namespace=$@ bash
   fi
+}
+
+function kubehistory {
+  kubectl get pods -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{"\t"}{.metadata.creationTimestamp}{"\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}' |sort
 }
 
 ## http://hayne.net/MacDev/Bash/aliases.bash
