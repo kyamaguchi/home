@@ -131,17 +131,6 @@ alias db_migrate='bundle exec rake db:migrate ; RAILS_ENV=test bundle exec rake 
 alias db_rollback='bundle exec rake db:rollback ; RAILS_ENV=test bundle exec rake db:rollback'
 alias db_drop='bundle exec rake db:drop ; RAILS_ENV=test bundle exec rake db:drop'
 alias testdb_reset='RAILS_ENV=test bundle exec rake db:drop ; RAILS_ENV=test bundle exec rake db:migrate'
-alias rmr='bundle exec rake nibs:clean && bundle exec rake resources'
-alias rakeq='rake simulator args="-com.apple.CoreData.SQLDebug 1"'
-alias rmlog='cat /Library/RubyMotion/NEWS'
-alias rmib='rake ib:project && cp'
-
-alias cdc='cd ~/current'
-alias rvmc='rvm use ruby-1.8.7-p330@rails3'
-alias rvms='rvm use system'
-alias drvmc='rvm --default use ruby-1.8.7-p330@rails3'
-alias drvms='rvm --default use system'
-alias m=mate
 
 alias g='git'
 alias gut=git
@@ -254,48 +243,6 @@ alias sim='open ~/Library/Application\ Support/iPhone\ Simulator/6.1/Application
 
 alias pgs='/usr/local/bin/postgres -D /usr/local/var/postgres'
 
-# Engine yard
-alias ey_production='ey status -e production | grep Commit | awk {'"'"'print $3'"'"'} | xargs git branch -lf ey_production && git log --graph --decorate --pretty=oneline --abbrev-commit -30 ey_production'
-alias ey_staging='ey status -e staging | grep Commit | awk {'"'"'print $3'"'"'} | xargs git branch -lf ey_staging && git log --graph --decorate --pretty=oneline --abbrev-commit -30 ey_staging'
-
-
-alias eyssh='ey ssh -e staging'
-alias eysshdb='ey ssh -e staging --db-master'
-
-function eysshs {
-  echo "Usage: $ eysshs 'ls /path/to/'"
-  ey ssh "echo \"### \`hostname\` ###\";$@" -e staging --all
-}
-function eysshproduction {
-  echo "Usage: $ eysshproduction 'ls /path/to/'"
-  ey ssh "echo \"### \`hostname\` ###\";$@" -e production --all
-}
-
-
-# Common Rails command shortcuts
-# http://blog.envylabs.com/2010/07/common-rails-command-shortcuts/
-function ss {
-  if [ -e script/rails ]; then
-    script/rails server $@
-  else
-    script/server $@
-  fi
-}
-function sc {
-  if [ -e script/rails ]; then
-    script/rails console $@
-  else
-    script/console $@
-  fi
-}
-function sg {
-  if [ -e script/rails ]; then
-    script/rails generate $@
-  else
-    script/generate $@
-  fi
-}
-
 function brewfix {
   brew unlink $@ && brew link $@
 }
@@ -392,19 +339,6 @@ alias findgrep='grepfind'
 find_larger() { find . -type f -size +${1}c ; }
 
 function sublg { bundle show $@ | xargs subl; }
-
-# alias for AWS
-alias ec2-start='ec2-run-instances'
-alias ec2-stop='ec2-terminate-instances'
-alias ec2-status='ec2-describe-instances'
-alias ec2-auth='ec2-authorize default -p 22 && ec2-authorize default -p 80'
-
-
-
-# Memo
-# Restart Finder
-# osascript -e 'tell app "Finder" to quit'
-
 
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then PATH=$PATH:$HOME/.rvm/bin ; fi # Add RVM to PATH for scripting
 
