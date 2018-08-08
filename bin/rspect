@@ -1,0 +1,19 @@
+#!/bin/sh
+
+revision=${1:-master}
+
+echo "Reverting the files in app to the revision '$revision'"
+git checkout $revision -- app
+git status
+
+echo "Finding spec files which have changes since the revision '$revision'"
+files=$(git diff $revision --name-only | grep '_spec.rb')
+
+echo "Running rspec with the following files (Should have failures)"
+for file in $files
+do
+  echo $file
+done
+echo
+
+rspec $files

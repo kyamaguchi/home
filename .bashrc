@@ -125,7 +125,7 @@ alias multibyte='git ls-files | xargs nkf -g | grep -v -P "(ASCII|BINARY)" | gre
 #alias tarx='tar zxvf'
 
 alias rspecf='rspec --only-failures'
-alias rspecd='rspec --format documentation'
+alias rspecdc='rspec --format documentation'
 alias rbp='rails_best_practices -f html . ; open rails_best_practices_output.html'
 alias db_migrate='bundle exec rake db:migrate ; RAILS_ENV=test bundle exec rake db:migrate'
 alias db_rollback='bundle exec rake db:rollback ; RAILS_ENV=test bundle exec rake db:rollback'
