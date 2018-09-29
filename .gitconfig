@@ -154,7 +154,7 @@
 
   open = !sh ~/bin/gitopen.sh
 [apply]
-  whitespace = strip
+  whitespace = warn
 [diff]
   color = auto
   rename = copy
