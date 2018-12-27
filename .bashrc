@@ -333,6 +333,16 @@ clear_git () {
   find . | grep -p ".git$" | xargs rm -rf
 }
 
+rm_node_modules () {
+  if [[ $1 = '-f' ]];then
+    # https://qiita.com/yuta0801/items/118d9478ad536a443f3f
+    find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+  else
+    find . -name 'node_modules' -type d
+    echo "Run '$ rm_node_modules -f' to remove all"
+  fi
+}
+
 # grepfind: to grep through files found by find, e.g. grepf pattern '*.c'
 # note that 'grep -r pattern dir_name' is an alternative if want all files
 grepfind () { find . -type f -name "$2" -print0 | xargs -0 grep "$1" ; }
