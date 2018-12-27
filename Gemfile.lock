@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/achiu/consular-iterm.git
-  revision: 2dd2df07404d5d8acc711e77740e4763cc62faf7
+  revision: 07f21c59840517d4e7065782541a1747890775f4
   specs:
-    consular-iterm (1.0.3)
+    consular-iterm (1.0.4)
       consular
       rb-scpt
 
@@ -21,7 +21,7 @@ GEM
     i18n (0.7.0)
     json (1.8.6)
     minitest (5.7.0)
-    rb-scpt (1.0.1)
+    rb-scpt (1.0.3)
     thor (0.19.1)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
@@ -35,4 +35,4 @@ DEPENDENCIES
   consular-iterm!
 
 BUNDLED WITH
-   1.15.4
+   1.16.2
