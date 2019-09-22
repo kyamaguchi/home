@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/achiu/consular-iterm.git
+  remote: https://github.com/achiurizo/consular-iterm
   revision: 07f21c59840517d4e7065782541a1747890775f4
   specs:
     consular-iterm (1.0.4)
@@ -35,4 +35,4 @@ DEPENDENCIES
   consular-iterm!
 
 BUNDLED WITH
-   1.16.2
+   1.17.3
