@@ -1,0 +1,72 @@
+{
+	"auto_complete": false,
+	"auto_complete_commit_on_tab": true,
+	"binary_file_patterns":
+	[
+		"vcr_cassettes/*.yml",
+		"public/assets/*",
+		"public/assets-test/*",
+		"*.dump",
+		"*.mp4",
+		"*.jpg",
+		"*.png",
+		"*.min.js",
+		"*.otf",
+		"*.eot",
+		"*.woff",
+		"*.ttf"
+	],
+	"bold_folder_labels": true,
+	"check_for_spring": false,
+	"color_scheme": "Packages/User/RailsCastsColorScheme.tmTheme",
+	"copy_with_empty_selection": false,
+	"detect_slow_plugins": true,
+	"disable_formatted_linebreak": true,
+	"draw_white_space": "all",
+	"enable_tab_scrolling": true,
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.tar.gz",
+		".DS_Store",
+		".byebug_history",
+		"*.db",
+		"*.sqlite3",
+		"*.sqlite3-journal",
+		"*.pdf",
+		"*.uml",
+		"*.graffle"
+	],
+	"folder_exclude_patterns":
+	[
+		"Backup",
+		"log",
+		"coverage",
+		"node_modules",
+		".sass-cache",
+		".git",
+		".bundle",
+		"tmp"
+	],
+	"font_size": 18.0,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"indent_guide_options":
+	[
+		"draw_active",
+		"draw_normal"
+	],
+	"line_padding_bottom": 0.5,
+	"line_padding_top": 0.5,
+	"new_window_settings":
+	{
+		"show_minimap": false
+	},
+	"save_on_focus_lost": true,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": false
+}

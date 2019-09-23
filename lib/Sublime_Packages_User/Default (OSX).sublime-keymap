@@ -1,0 +1,58 @@
+[
+  // Custom commands
+
+  { "keys": ["ctrl+shift+i"], "command": "copy_paste_killer" },
+  { "keys": ["super+alt+w"], "command": "close_other_tabs" },
+  { "keys": ["super+shift+t"], "command": "open_recent_file", "args": {"index" : 0} },
+
+  { "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser"} },
+  { "keys": ["ctrl+shift+d"], "command": "file_diff_menu" },
+  { "keys": ["ctrl+shift+7"], "command": "change_quotes"},
+
+  // Embedded commands
+  { "keys": ["ctrl+shift+super+r"], "command": "reveal_in_side_bar"},
+
+  // Remap
+  { "keys": ["ctrl+shift+space"], "command": "auto_complete" },
+  { "keys": ["ctrl+shift+space"], "command": "replace_completion_with_auto_complete", "context":
+    [
+      { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+      { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+      { "key": "setting.tab_completion", "operator": "equal", "operand": true }
+    ]
+  },
+
+  { "keys": ["super+shift+y"], "command": "run_last_ruby_test" },
+  { "keys": ["alt+shift+s"], "command": "run_single_ruby_test" },
+
+  {
+    "keys": ["super+alt+r"],
+    "command": "shell_command",
+    "args": {
+      "command": "rm",
+      "region": "arg"
+    }
+  },
+
+  // {
+  //   "keys": ["super+shift+f"],
+  //   "command": "test_current_file",
+  //   "context": [
+  //     {
+  //       "key": "selector",
+  //       "operator": "equal",
+  //       "operand": "source.ruby, source.rspec"
+  //     }
+  //   ]
+  // },
+  {
+    "keys": ["super+shift+m"],
+    "command": "set_setting",
+    "args": {
+      "env": {
+        "SELENIUM": "true"
+      }
+    }
+  },
+  // { "keys": ["super+shift+m"], "command": "run_last_spec" },
+]
