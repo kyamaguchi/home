@@ -150,13 +150,6 @@ alias grepc='LANG=C ggrep'
 
 alias pjson='python -mjson.tool'
 
-alias cl='consular list'
-alias ce='consular edit'
-alias cs='consular start'
-alias cc='consular create'
-alias cst='consular start today'
-alias tst='consular start today'
-
 alias s='subl -w'
 alias s2='subl2 -w'
 alias sublc2='cd ~/Library/Application\ Support/Sublime\ Text\ 2/'
