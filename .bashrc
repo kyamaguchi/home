@@ -307,7 +307,19 @@ function sshweb {
     echo "[Error] Give namespace to ${FUNCNAME[ 0 ]}"
   else
     ## TODO kubectl get pod --namespace xxx -l component=rails,role=web
-    local name=$(kubectl get pods --namespace=$@ | egrep '(web|rails|puma)' | grep Running | head -n1 | awk '{print $1}')
+    local name=$(kubectl get pods --namespace=$@ | egrep '(migrate)' | grep Running | head -n1 | awk '{print $1}')
+    kubectl exec -ti $name --namespace=$@ bash
+  fi
+}
+
+function sshweb_old {
+  # ssh first pod in given namespace
+  if (( "$#" != 1 ))
+  then
+    echo "[Error] Give namespace to ${FUNCNAME[ 0 ]}"
+  else
+    ## TODO kubectl get pod --namespace xxx -l component=rails,role=web
+    local name=$(kubectl get pods --namespace=$@ | egrep '(migrate|web|rails|puma)' | grep Running | head -n1 | awk '{print $1}')
     kubectl exec -ti $name --namespace=$@ bash
   fi
 }
