@@ -23,7 +23,7 @@
 [alias]
   co = checkout
   br = branch
-  bl = branch -lf
+  bl = branch -f --create-reflog
   bd = "!git branch --merged | grep -v '\\*' | grep -v 'master' | grep -v 'develop' | xargs -n 1 git branch -d"
   bds = "!git branch -r --merged | grep share | grep -v master | sed 's/share\\///' | xargs -n 1 git push --delete share"
   bmr = !git branch -r --merged
