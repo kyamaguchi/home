@@ -148,6 +148,26 @@ alias greprl='ggrep -rl'
 alias greprx='ggrep --exclude-dir=tmp --exclude-dir=log -r'
 alias grepc='LANG=C ggrep'
 
+function mmgrep() {
+  # Refs:
+  # https://stackoverflow.com/questions/5929492/bash-script-to-convert-from-html-entities-to-characters
+  # http://d.hatena.ne.jp/BigFatCat/20080120/1200825243
+  # https://stackoverflow.com/questions/15065010/how-do-i-use-a-for-each-loop-to-iterate-over-file-paths-output-by-the-find-utili
+  if [[ -n "$1" ]];then
+    find . -type f -iname "*.mm" -print0 | while IFS= read -r -d $'\0' line; do
+      result=$(cat "$line" | perl -MHTML::Entities -pe 'binmode(STDOUT, ":utf8"); decode_entities($_);' | grep $1)
+      if [ -n "$result" ]; then
+        echo $line
+        echo $result
+        echo ''
+      fi
+    done
+  else
+    echo "Grep mindmap documents which includes HTML entities"
+    echo "Usage: $ mmgrep word"
+  fi
+}
+
 alias pjson='python -mjson.tool'
 
 alias s='subl -w'
