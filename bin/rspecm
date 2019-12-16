@@ -1,4 +1,10 @@
 #!/bin/sh
 
-# rspec $(git status -s | awk '{if ($1 == "M") print $2}' | grep spec/features)
-rspec $(git status -s | awk '{if ($1 == "M") print $2}' | grep '_spec.rb')
+files=$(git status -s | awk '{if ($1 == "M") print $2}' | grep '_spec.rb')
+if [[ $files ]]; then
+  echo "Running rspec with the changed files."
+  echo $files
+  rspec $files -f d
+else
+  echo "No changed files."
+fi
