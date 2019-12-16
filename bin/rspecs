@@ -1,4 +1,15 @@
 #!/bin/sh
 
-grep -R --include="*_spec.rb" $1 .
-rspec --format documentation $(grep -R --include="*_spec.rb" -l $1 .)
+if [ -z "$*" ]; then
+  echo "Please run with $ rspecs <keyword>"
+  exit 1
+fi
+
+files=$(grep -R --include="*_spec.rb" -l $1 .)
+if [[ $files ]]; then
+  echo "Running rspec with the files with grep."
+  echo $files
+  rspec $files -f d
+else
+  echo "No matched files."
+fi
