@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cpulimit -p $(ps -A | grep " /Applications/Dropbox.app/Contents/MacOS/Dropbox$" | awk '{print $1}') -l 60 &
+cpulimit -p $(ps -A | grep " /Applications/Dropbox.app/Contents/MacOS/Dropbox$" | awk '{print $1}') -l 30 &
 
 # Refs:
 # $ brew install cpulimit
