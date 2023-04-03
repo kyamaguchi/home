@@ -81,9 +81,11 @@
   lf = log -p --follow
   lreg = "!f() { git log -p -S''$1'' --pickaxe-regex; }; f"
   lregx = "!f() { git log -p -S''$1'' --pickaxe-regex -- . ':(exclude)*ss' ':(exclude)*yml'; }; f"
+  lregxx = "!f() { git log -p -S''$1'' --pickaxe-regex -- . ':(exclude)*ss' ':(exclude)*yml' ':(exclude)spec/fixtures*' ':(exclude)package.json' ':(exclude)yarn.lock'; }; f"
   lt = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
   lof = log --name-status
   lgp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  # lgr = "!f() { log --pretty=format:''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'' --abbrev-commit --date=relative --grep=$1; }; f"
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lolcat = !git log --graph --decorate --pretty=oneline --abbrev-commit | lolcat
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --branches --remotes
