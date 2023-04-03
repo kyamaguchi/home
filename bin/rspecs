@@ -5,7 +5,7 @@ if [ -z "$*" ]; then
   exit 1
 fi
 
-files=$(grep -R --include="*_spec.rb" -l $1 .)
+files=$(grep -R --include="*_spec.rb" -l $1 spec | grep -v 'vendor/bundle')
 if [[ $files ]]; then
   echo "Running rspec with the files with grep."
   echo $files

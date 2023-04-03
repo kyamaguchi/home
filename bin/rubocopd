@@ -11,4 +11,4 @@ do
 done
 echo
 
-bundle exec rspec $files
+bundle exec bin/rubocop $files

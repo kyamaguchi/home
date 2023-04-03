@@ -16,4 +16,4 @@ do
 done
 echo
 
-rspec $files
+bundle exec rspec $files
