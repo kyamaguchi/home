@@ -27,8 +27,8 @@
   bd = "!git branch --merged | grep -v '\\*' | grep -v 'master' | grep -v 'main' | grep -v 'develop' | xargs -n 1 git branch -d"
   bds = "!git branch -r --merged | grep share | grep -v master | sed 's/share\\///' | xargs -n 1 git push --delete share"
   bmr = !git branch -r --merged
-  brt = "! f() { for k in $(git branch -r $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
-  blt = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
+  brt = "! f() { for k in $(git branch -r $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr) <%an>%Creset ' $k) $k" ;  done | sort -r; }; f"
+  blt = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr) <%an>%Creset ' $k) $k" ;  done | sort -r; }; f"
   bt = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
   st = status
   ts = status
@@ -79,7 +79,7 @@
   lg = log -p
   lw = log -p -w
   lf = log -p --follow
-  lreg = "!f() { git log -p -S''$1'' --pickaxe-regex; }; f"
+  lreg = "!f() { git log -p -S''$1'' --pickaxe-regex -- ${2-.}; }; f"
   lregx = "!f() { git log -p -S''$1'' --pickaxe-regex -- . ':(exclude)*ss' ':(exclude)*yml'; }; f"
   lregxx = "!f() { git log -p -S''$1'' --pickaxe-regex -- . ':(exclude)*ss' ':(exclude)*yml' ':(exclude)spec/fixtures*' ':(exclude)package.json' ':(exclude)yarn.lock'; }; f"
   lt = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
